@@ -105,7 +105,45 @@ function squareObj(objToSquare){
 
 
 var squaredObjArray = arrayOfObjects.map(squareObj);
+//console.log(squaredObjArray);
 
-console.log(squareObj(arrayOfObjects[0]));
-console.log(squaredObjArray);
+/*Create a function called operationMaker that takes 
+only a string called operation as argument. This string could be “add”, 
+“subtract”, “mult” or “div”. Your function will return a function that 
+will take two numbers and return the result of running operation on these 
+numbers*/
 
+
+
+
+function operationMaker(operator){
+    switch (operator) {
+        case 'add':
+           return function (add1, add2) {
+               return add1 + add2;
+           }
+        case 'subtract':
+            return function (sub1, sub2) {
+                return sub1 - sub2;
+            }
+        case 'div':
+            return function (div1, div2){
+                return div1 / div2;
+            }
+        case 'mult':
+            return function (mult1, mult2) {
+                return mult1 * mult2;
+            }
+        default:
+            return "incorrect operator given"
+    }
+    
+}
+
+var adder = operationMaker("add");
+var sum = adder(5,10);
+console.log(sum);
+
+var multiplier = operationMaker("mult");
+var product = multiplier(5, 10); 
+console.log(product)
