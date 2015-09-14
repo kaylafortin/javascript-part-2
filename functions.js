@@ -36,7 +36,7 @@ var longString5 = "5. I lied about the longString4 and this is equal len";
 var stringArray = [longString1, longString2, longString3, longString4, longString5]
 
 //console.log(stringArray);
-console.log(stringArray.sort(sortString));
+//console.log(stringArray.sort(sortString));
 
 /*Create an array of objects (don’t need to use new here, 
 just regular object literals). 
@@ -77,5 +77,17 @@ function sortEmail(){
 };
 
 
-console.log(arrayOfObjects.sort(sortName));
-console.log(sortEmail())
+//console.log(arrayOfObjects.sort(sortName));
+//console.log(sortEmail())
+
+/*Create a function that can be used with Array.prototype.map. 
+This function should take a number and return its square. 
+Then, use this function with map on an array of numbers to check the result*/
+
+function squareArray(numToSquare){
+    return numToSquare * numToSquare;
+}
+
+var arrayToSquare = [2, 5, 9, 7, 10];
+var squaredArray = arrayToSquare.map(squareArray)
+console.log(squaredArray);
