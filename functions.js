@@ -2,24 +2,53 @@
 I saved the test strings as variables just to make the code
 look a bit neater. I understand that I could have just put them
 directly in elements in the array.*/
-function basicSort(value1, value2, prop1, prop2) {
-    if (prop2 === undefined) {
-        if (value1[prop1] > value2[prop1]) {
-            return 1;
-        }
-        if (value2[prop1] > value1[prop1]) {
-            return -1;
-        }
-        return 0;
+/*An updated more generic basicSort function*/
+
+var testArray = [2, 5, 8, 9, 10, 2, 0]
+
+function basicSort(value1, value2 , propArray) {
+        var propertyArray = []
+    for(var j = 2; j < arguments.length; j++) {
+        propertyArray.push(arguments[j]);
     }
-    if (value1[prop1][prop2] > value2[prop1][prop2]) {
+    for (var i=0; i < propertyArray.length; i++) {
+        value1 = value1[propertyArray[i]];
+        value2 = value2[propertyArray[i]];
+    }
+    if (value1 > value2) {
         return 1;
     }
-    if (value2[prop1][prop2] > value1[prop1][prop2]) {
+    if (value2 > value1) {
         return -1;
     }
     return 0;
 }
+
+
+var name1 = {
+    name: "Tim",
+    age: 22,
+}
+
+var name2 = {
+    name: "Kayla",
+    age: 55,
+}
+var name3 = {
+    name: "Dave",
+    age: 2,
+}
+    
+var testArray1 = [name1, name2, name3];
+
+console.log(testArray.sort(basicSort))
+console.log(testArray1.sort(sortSomething))
+
+function sortSomething(value1, value2) {
+    var sortedName = basicSort(value1, value2, 'name', 'length');
+    return sortedName;
+}
+
 
 
 function sortString(string1, string2){
@@ -35,8 +64,8 @@ var longString4 = "4. This is going to be the longest string of them all";
 var longString5 = "5. I lied about the longString4 and this is equal len";
 var stringArray = [longString1, longString2, longString3, longString4, longString5]
 
-//console.log(stringArray);
-//console.log(stringArray.sort(sortString));
+
+console.log(stringArray.sort(sortString));
 
 /*Create an array of objects (don’t need to use new here, 
 just regular object literals). 
@@ -78,8 +107,8 @@ function sortEmail(){
 };
 
 
-//console.log(arrayOfObjects.sort(sortName));
-//console.log(sortEmail())
+console.log(arrayOfObjects.sort(sortName));
+console.log(sortEmail())
 
 /*Create a function that can be used with Array.prototype.map. 
 This function should take a number and return its square. 
@@ -142,8 +171,8 @@ function operationMaker(operator){
 
 var adder = operationMaker("add");
 var sum = adder(5,10);
-console.log(sum);
+//console.log(sum);
 
 var multiplier = operationMaker("mult");
 var product = multiplier(5, 10); 
-console.log(product)
+//console.log(product)
