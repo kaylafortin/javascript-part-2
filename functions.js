@@ -87,6 +87,13 @@ var Student = new Person("Student", "Student@mail.mcgill.ca", 3)
 var arrayOfObjects = [Kayla, Dave, Sir, Student];
 
 
+var Kayla1 = {name: "Kayla", email: "kayla.hennig@mail.com"}
+var Dave1 = {name: "Dave", email: "dave.mail.com"}
+var Sir1 = {name: "Sir Edward", email: "ed2@mail.com"}
+var Student1 = {name: "Student", email: "stident@mail.mcgill.com"}
+
+var arrayOfObjects1 = [Kayla1, Dave1, Sir1, Student1];
+
 function sortName(name1, name2) {
     var sortedName = basicSort(name1, name2, "name", "length");
     return sortedName;
@@ -94,9 +101,9 @@ function sortName(name1, name2) {
 
 
 function sortEmail(){
-    var ArrayHolder = arrayOfObjects;
-    for (var i = 0; i < arrayOfObjects.length; i++) {
-        ArrayHolder[i].email = arrayOfObjects[i].email.toLowerCase();
+    var ArrayHolder = arrayOfObjects1;
+    for (var i = 0; i < arrayOfObjects1.length; i++) {
+        ArrayHolder[i].email = arrayOfObjects1[i].email.toLowerCase();
     }
 
     function sortEmail2(lowerEmail1, lowerEmail2) {
@@ -107,7 +114,7 @@ function sortEmail(){
 };
 
 
-console.log(arrayOfObjects.sort(sortName));
+console.log(arrayOfObjects1.sort(sortName));
 console.log(sortEmail())
 
 /*Create a function that can be used with Array.prototype.map. 
