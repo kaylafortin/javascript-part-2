@@ -79,20 +79,20 @@ function Person(name, email, num) {
     this.email = email;
     this.num = num
 }
-var Kayla = new Person("Kayla", "kayla@mail.com", 22)
-var Dave = new Person("Dave", "dave@mail.com", 25)
-var Sir = new Person("Sir Edward", "Edward.has.long.email.com", 10)
-var Student = new Person("Student", "Student@mail.mcgill.ca", 3)
+var kayla = new Person("Kayla", "kayla@mail.com", 22)
+var dave = new Person("Dave", "dave@mail.com", 25)
+var sir = new Person("Sir Edward", "Edward.has.long.email.com", 10)
+var student = new Person("Student", "Student@mail.mcgill.ca", 3)
 
-var arrayOfObjects = [Kayla, Dave, Sir, Student];
+var arrayOfObjects = [kayla, dave, sir, student];
 
 
-var Kayla1 = {name: "Kayla", email: "kayla.hennig@mail.com"}
-var Dave1 = {name: "Dave", email: "dave.mail.com"}
-var Sir1 = {name: "Sir Edward", email: "ed2@mail.com"}
-var Student1 = {name: "Student", email: "stident@mail.mcgill.com"}
+var kayla1 = {name: "Kayla", email: "kayla.hennig@mail.com"}
+var dave1 = {name: "Dave", email: "dave.mail.com"}
+var sir1 = {name: "Sir Edward", email: "ed2@mail.com"}
+var student1 = {name: "Student", email: "stident@mail.mcgill.com"}
 
-var arrayOfObjects1 = [Kayla1, Dave1, Sir1, Student1];
+var arrayOfObjects1 = [kayla1, dave1, sir1, student1];
 
 function sortName(name1, name2) {
     var sortedName = basicSort(name1, name2, "name", "length");
@@ -101,16 +101,16 @@ function sortName(name1, name2) {
 
 
 function sortEmail(){
-    var ArrayHolder = arrayOfObjects1;
+    var arrayHolder = arrayOfObjects1;
     for (var i = 0; i < arrayOfObjects1.length; i++) {
-        ArrayHolder[i].email = arrayOfObjects1[i].email.toLowerCase();
+        arrayHolder[i].email = arrayOfObjects1[i].email.toLowerCase();
     }
 
     function sortEmail2(lowerEmail1, lowerEmail2) {
         var sorted = basicSort(lowerEmail1, lowerEmail2, "email");
     return sorted;
     }
-    return ArrayHolder.sort(sortEmail2); 
+    return arrayHolder.sort(sortEmail2); 
 };
 
 
@@ -121,12 +121,12 @@ console.log(sortEmail())
 This function should take a number and return its square. 
 Then, use this function with map on an array of numbers to check the result*/
 
-function squareArray(numToSquare) {
+function squareNumber(numToSquare) {
     return numToSquare * numToSquare;
 }
 
 var arrayToSquare = [2, 5, 9, 7, 10];
-var squaredArray = arrayToSquare.map(squareArray)
+var squaredNumber = arrayToSquare.map(squareNumber)
 //console.log(squaredArray);
 
 /*Create a function that can be used with Array.prototype.map. 
